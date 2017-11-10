@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import Card from './Card'
 
 class Hello extends Component {
-	render() {
-		return (
-			<h1>Hello, World!!!!</h1>
-		)
-	}
+  render() {
+    return (
+      <Card title='asa'/>
+    )
+  }
 }
 
 export default Hello;
