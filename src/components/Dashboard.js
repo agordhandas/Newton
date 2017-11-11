@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Card from './Card'
 import Navbar from './Navbar'
 
-class Hello extends Component {
+class Dashboard extends Component {
   render() {
     return (
       <div>
@@ -28,4 +28,4 @@ const styles = {
   }
 }
 
-export default Hello;
+export default Dashboard;
