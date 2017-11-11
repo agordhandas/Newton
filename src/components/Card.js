@@ -1,26 +1,34 @@
 import React, { Component } from 'react';
 
 class Card extends Component {
+  renderFooter() {
+    return (
+      this.props.footer ?
+        <div className="panel-footer" style={styles.footerStyle}>{this.props.footer}</div>
+        : null
+    )
+  }
+
 	render() {
-    console.log(this.props.title)
-		return (
-      
-  			<div className="col-sm-3">
+		return (  			
           <div className="panel panel-default" style={styles.panel}>
             <div style={styles.cardContainer}>
               <h3 className="panel-title" style={styles.panelTitle}>{this.props.title}</h3>
               <div style={styles.subTitleStyle}>{this.props.subtitle}</div>
               <div style={styles.panelBody}>{this.props.body}</div>
             </div>
-            <div className="panel-footer" style={styles.footerStyle}>{this.props.footer}</div>
+            {this.renderFooter()}
           </div>
-        </div>
-      
 		)
 	}
 }
 
 const styles = {
+  panel: {
+    width: "300px",
+    height: "auto",
+    margin: 20
+  },
   panelTitle: {
     paddingBottom: 0,
     fontSize: "large"
