@@ -1,13 +1,19 @@
 var webpack = require('webpack');  
-module.exports = {  
-  entry: [
-    "./src/index.js"
-  ],
+var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+  entry: "./src/index.js",
   output: {
     path: __dirname + '/static',
-    filename: "bundle.js"
+    filename: 'bundle.js',
+    publicPath: '/src/components'
   },
   module: {
+    // rules: [
+    //   { test: /\.(js)$/, use: 'babel-loader' },
+    //   { test: /\.css$/, use: [ 'style-loader', 'css-loader' ]},
+    // ],
     loaders: [
       {
         test: /\.js?$/,
@@ -19,6 +25,12 @@ module.exports = {
       }
     ]
   },
+  devServer: {
+    historyApiFallback: true,
+  },
   plugins: [
+    // new HtmlWebpackPlugin({
+    //   template: 'app/index.html'
+    // })
   ]
 };
